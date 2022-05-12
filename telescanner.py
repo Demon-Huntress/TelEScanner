@@ -5,19 +5,6 @@
 # ----------------------------------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------------------------------
 
-#DESCRIPCIÓN
-"""
-Este programa extrae los posibles teléfonos de España que figuren previamente en comentarios de grupos de facebook,
-scrapeados mediante la aplicacion APIFY "Facebook Latest Comments Scraper", por lo que este programa está condicionado
-a su formato de salida (.json).
-
-- Ejecuta este script e introduce en la consola el archivo JSON ej.: "miArchivo.json"
-- Se generará un archivo ".txt" con todos los números. Guardado en la carpeta "/Output"
-
-Los archivos generados por APIFY deben colocarse en el directorio "APIFY/JSON". Además, allí se encontrará un archivo
-de prueba llamado "fblcs_test.json"
-"""
-
 import re
 import json
 import os
@@ -80,7 +67,7 @@ while True:
 
         datadir = Path("""./APIFY/FBLCS""")
         readJSON = datadir/str(input())
-        # dataset_facebook-latest-comments-scraper_2022-04-24_13-47-51-325.json
+
         try:
             with open(readJSON, "r", encoding='utf8') as readFile:
                 file = json.load(readFile)
